@@ -4,10 +4,13 @@ import Project from "./_components/Project";
 import Contact from "./_components/Contact";
 import Header from "./_components/Header";
 import Skills from "./_components/Skills";
+import Footer from "./_components/Footer";
+
 const App = () => {
   return (
     <div className="relative bg-black text-white">
       <Header />
+    
 
       {/* Content Overlay */}
       <div className="relative z-10">
@@ -16,6 +19,7 @@ const App = () => {
         <Skills />
         <Project />
         <Contact />
+        <Footer />
       </div>
     </div>
   );

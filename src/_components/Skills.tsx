@@ -17,7 +17,6 @@ import {
   SiVite,
 } from "react-icons/si";
 import { motion } from "framer-motion";
-import { useEffect, useRef } from "react";
 
 const skills = [
   {
@@ -60,40 +59,8 @@ const skills = [
 ];
 
 const Skills = () => {
-  const particleRefs = useRef<HTMLDivElement[]>([]);
-
-  useEffect(() => {
-    const animateParticles = () => {
-      particleRefs.current.forEach((particle) => {
-        if (particle) {
-          particle.style.transform = `translate(${Math.random() * 20 - 10}px, ${
-            Math.random() * 20 - 10
-          }px)`;
-        }
-      });
-    };
-
-    const interval = setInterval(animateParticles, 1000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <div className="relative py-24 px-10 text-white max-w-6xl mx-auto">
-      {/* Particle Effects */}
-      {[...Array(60)].map((_, i) => (
-        <div
-          key={`particle-${i}`}
-          ref={(el) => {
-            if (el) particleRefs.current[i] = el;
-          }}
-          className="absolute w-1.5 h-1.5 rounded-full bg-white opacity-50"
-          style={{
-            top: `${(i % 10) * 10}%`,
-            left: `${(i % 6) * 16}%`,
-          }}
-        />
-      ))}
-
       {/* Title */}
       <h2 className="text-6xl font-extrabold text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">
         My Tech Stack 🚀

@@ -96,7 +96,7 @@ const Project = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-gray-100 to-white py-16 px-6 overflow-hidden"
+      className="relative flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-gray-100 to-white py-16 px-6 overflow-hidden" id="projects"
     >
       {/* Floating Background Shapes */}
       <div className="absolute inset-0 pointer-events-none">
