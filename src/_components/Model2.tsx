@@ -10,7 +10,7 @@ import { Group } from "three";
 
 const Model2 = () => {
   const modelRef = useRef<Group>(null);
-  const { scene } = useGLTF("public/models/About.glb"); // Correct path
+  const { scene } = useGLTF("/models/About.glb"); // Correct path
 
   // Smooth Rotation Effect
   useFrame(() => {
@@ -32,7 +32,7 @@ const Model2 = () => {
 };
 
 // Preload the model
-useGLTF.preload("public/models/About.glb");
+useGLTF.preload("/models/About.glb");
 
 const Model2Canvas = () => {
   return (
