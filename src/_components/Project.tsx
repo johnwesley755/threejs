@@ -96,7 +96,8 @@ const Project = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-gray-100 to-white py-16 px-6 overflow-hidden" id="projects"
+      className="relative flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-gray-100 to-white py-16 px-6 overflow-hidden"
+      id="projects"
     >
       {/* Floating Background Shapes */}
       <div className="absolute inset-0 pointer-events-none">
@@ -123,7 +124,7 @@ const Project = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="text-4xl font-extrabold text-gray-900 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text"
+          className="text-6xl max-md:text-5xl font-extrabold text-gray-900 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-transparent bg-clip-text"
         >
           My Projects
         </motion.h2>
@@ -142,8 +143,8 @@ const Project = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: index * 0.2 }}
           >
-            <Card className="bg-white/80 backdrop-blur-lg text-gray-900 border border-gray-300 shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl rounded-2xl overflow-hidden">
-              <CardHeader>
+            <Card className="bg-white/80 backdrop-blur-lg text-gray-900 border border-gray-300 shadow-lg transition-transform transform hover:scale-105 hover:shadow-2xl rounded-2xl overflow-hidden flex flex-col h-full">
+              <CardHeader className="flex-grow">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -153,8 +154,10 @@ const Project = () => {
                   {project.title}
                 </CardTitle>
               </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 text-sm">{project.description}</p>
+              <CardContent className="flex flex-col flex-grow">
+                <p className="text-gray-600 text-sm flex-grow">
+                  {project.description}
+                </p>
                 <div className="mt-3 flex gap-4 text-sm">
                   {project.github && (
                     <a

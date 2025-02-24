@@ -31,7 +31,7 @@ const Header: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "#home" },
+    { name: "Home", href: "#" },
     { name: "About", href: "#about" },
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
@@ -51,7 +51,7 @@ const Header: React.FC = () => {
       >
         <div className="container mx-auto flex justify-between items-center py-4 px-6">
           {/* Logo */}
-          <a href="hero" className="text-2xl font-bold text-white">
+          <a href="#" className="text-2xl font-bold text-white">
             John Wesley<span className="text-purple-500">.</span>
           </a>
 

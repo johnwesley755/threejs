@@ -31,6 +31,7 @@ const About = () => {
     <section
       ref={sectionRef}
       className="relative flex flex-col md:flex-row items-center justify-between min-h-screen bg-gradient-to-b from-white to-gray-100 text-gray-900 px-4 xs:px-6 md:px-16 py-12 md:py-24 gap-6 md:gap-20 overflow-hidden"
+      id="about"
     >
       {/* Left Side: About Content */}
       <div className="relative z-10 max-w-2xl text-center md:text-left">
@@ -92,7 +93,7 @@ const About = () => {
             Contact 📩
           </a>
           <a
-            href="/resume.pdf"
+            href="/src/assets/resume (3).pdf"
             download
             className="px-4 py-2 xs:px-6 xs:py-3 bg-blue-600 text-white text-sm xs:text-base font-semibold rounded-full shadow-lg hover:scale-105 transition-transform duration-300"
           >

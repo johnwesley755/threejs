@@ -17,6 +17,7 @@ import {
   SiVite,
 } from "react-icons/si";
 import { motion } from "framer-motion";
+import Model3 from "../_components/Model3"; // 3D Model Component
 
 const skills = [
   {
@@ -60,40 +61,48 @@ const skills = [
 
 const Skills = () => {
   return (
-    <div className="relative py-24 px-10 text-white max-w-6xl mx-auto">
-      {/* Title */}
-      <h2 className="text-6xl font-extrabold text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">
-        My Tech Stack 🚀
-      </h2>
-      <p className="text-center text-gray-300 mb-16 text-lg">
-        The technologies and tools I use to build innovative solutions.
-      </p>
+    <div className="relative py-24 px-6 md:px-10 text-white max-w-7xl mx-auto overflow-hidden">
+      {/* Background 3D Model (Centered) */}
+      <div className="absolute inset-0 flex justify-center items-center opacity-40 z-0">
+        <Model3 />
+      </div>
 
-      {/* Skills Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-        {skills.map((skill) => (
-          <div key={skill.category} className="p-6">
-            <h3 className="text-2xl font-semibold mb-6 text-gray-300 border-b border-gray-700 pb-3">
-              {skill.category}
-            </h3>
-            <div className="flex flex-wrap gap-6">
-              {skill.items.map((item) => (
-                <motion.div
-                  key={item.name}
-                  whileHover={{
-                    scale: 1.15,
-                    boxShadow: "0px 0px 20px rgba(255, 255, 255, 0.5)",
-                  }}
-                  transition={{ duration: 0.3 }}
-                  className="flex items-center gap-4 bg-gray-900/60 py-4 px-6 rounded-xl shadow-lg border border-gray-700 hover:border-cyan-400 transition-all"
-                >
-                  <span className="text-4xl">{item.icon}</span>
-                  <span className="text-lg font-medium">{item.name}</span>
-                </motion.div>
-              ))}
+      {/* Content Section */}
+      <div className="relative z-10">
+        {/* Title */}
+        <h2 className="text-6xl font-extrabold text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-violet-400 to-pink-600 drop-shadow-lg">
+          My Tech Stack 🚀
+        </h2>
+        <p className="text-center text-gray-300 mb-16 text-lg">
+          The technologies and tools I use to build innovative solutions.
+        </p>
+
+        {/* Skills Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {skills.map((skill) => (
+            <div key={skill.category} className="p-6">
+              <h3 className="text-2xl font-semibold mb-6 text-gray-300 border-b border-gray-700 pb-3">
+                {skill.category}
+              </h3>
+              <div className="flex flex-wrap gap-6">
+                {skill.items.map((item) => (
+                  <motion.div
+                    key={item.name}
+                    whileHover={{
+                      scale: 1.1,
+                      boxShadow: "0px 0px 15px rgba(0, 255, 255, 0.7)",
+                    }}
+                    transition={{ duration: 0.3 }}
+                    className="flex items-center gap-4 bg-gray-900/70 py-4 px-6 rounded-xl shadow-xl border border-gray-800 hover:border-cyan-400 transition-all backdrop-blur-md"
+                  >
+                    <span className="text-4xl">{item.icon}</span>
+                    <span className="text-lg font-medium">{item.name}</span>
+                  </motion.div>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
