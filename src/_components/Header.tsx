@@ -12,8 +12,23 @@ const Header: React.FC = () => {
   const sidebarRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    let lastScrollY = window.scrollY;
+
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+
+      if (navRef.current) {
+        if (currentScrollY > lastScrollY) {
+          // Scrolling down - Hide navbar
+          navRef.current.style.transform = "translateY(-100%)";
+        } else {
+          // Scrolling up - Show navbar
+          navRef.current.style.transform = "translateY(0)";
+        }
+      }
+
+      lastScrollY = currentScrollY;
+      setIsScrolled(currentScrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -42,12 +57,16 @@ const Header: React.FC = () => {
       {isLoading && <Loader />} {/* Display loader while loading */}
       <header
         ref={navRef}
-        className={`fixed top-0 left-0 w-full z-50 transition-all ${
+        className={`fixed top-0 left-0 w-full z-50 transition-transform duration-300 ${
           isScrolled
             ? "bg-black/80 backdrop-blur-lg shadow-lg"
             : "bg-transparent"
         }`}
         id="home"
+        style={{
+          transform: "translateY(0)",
+          transition: "transform 0.3s ease-in-out",
+        }}
       >
         <div className="container mx-auto flex justify-between items-center py-4 px-6">
           {/* Logo */}
