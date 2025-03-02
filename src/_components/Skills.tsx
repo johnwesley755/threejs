@@ -17,6 +17,8 @@ import {
   SiVite,
   SiMongodb,
   SiExpress,
+  SiFigma,
+  SiFramer,
 } from "react-icons/si";
 import { motion } from "framer-motion";
 import Model3 from "../_components/Model3"; // 3D Model Component
@@ -59,6 +61,13 @@ const skills = [
       { name: "Git", icon: <FaGit className="text-[#f34f29]" /> },
       { name: "GitHub", icon: <FaGithub className="text-white" /> },
       { name: "Vite", icon: <SiVite className="text-[#646cff]" /> },
+    ],
+  },
+  {
+    category: "Design & Prototyping",
+    items: [
+      { name: "Figma", icon: <SiFigma className="text-[#f24e1e]" /> },
+      { name: "Framer", icon: <SiFramer className="text-[#0055ff]" /> },
     ],
   },
 ];
