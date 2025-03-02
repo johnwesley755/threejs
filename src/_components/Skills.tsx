@@ -15,6 +15,8 @@ import {
   SiMui,
   SiFirebase,
   SiVite,
+  SiMongodb,
+  SiExpress,
 } from "react-icons/si";
 import { motion } from "framer-motion";
 import Model3 from "../_components/Model3"; // 3D Model Component
@@ -47,6 +49,8 @@ const skills = [
     items: [
       { name: "Firebase", icon: <SiFirebase className="text-[#ffca28]" /> },
       { name: "Node.js", icon: <FaNodeJs className="text-[#68a063]" /> },
+      { name: "MongoDB", icon: <SiMongodb className="text-[#47a248]" /> },
+      { name: "Express.js", icon: <SiExpress className="text-gray-400" /> },
     ],
   },
   {
